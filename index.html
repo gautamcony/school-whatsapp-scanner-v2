@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#1f4e79"
+  >
+
+  <title>School WhatsApp Scanner V2.0</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f5f9;
+      color: #222;
+    }
+
+    .app {
+      max-width: 520px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: #ffffff;
+    }
+
+    .header {
+      background: #1f4e79;
+      color: white;
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .header p {
+      margin: 7px 0 0;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .version {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 9px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.15);
+      font-size: 11px;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .section-title {
+      margin: 4px 0 12px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      margin: 0 0 16px;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .method-card {
+      border: 1px solid #d9e0e7;
+      border-radius: 14px;
+      padding: 17px;
+      background: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+      text-align: left;
+    }
+
+    .method-card:hover {
+      border-color: #1f4e79;
+      background: #f7fbff;
+    }
+
+    .method-icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .method-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .method-description {
+      margin-top: 5px;
+      color: #666;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .status-box {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f4f6f8;
+      border: 1px solid #e0e4e8;
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 20px 16px;
+      text-align: center;
+      color: #777;
+      font-size: 11px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="header">
+
+      <h1>School WhatsApp Scanner</h1>
+
+      <p>
+        PM SHRI Kendriya Vidyalaya Ashok Nagar, Chennai
+      </p>
+
+      <div class="version">
+        Project 2.0
+      </div>
+
+    </header>
+
+
+    <main class="content">
+
+      <div class="section-title">
+        Identify Student
+      </div>
+
+      <p class="subtitle">
+        Choose one identification method. After identification,
+        the student's details will be shown for mandatory teacher confirmation.
+      </p>
+
+
+      <div class="method-grid">
+
+        <!-- FACE RECOGNITION -->
+
+        <button
+          class="method-card"
+          type="button"
+          onclick="selectMethod('Face Recognition')"
+        >
+
+          <div class="method-icon">
+            🙂
+          </div>
+
+          <div class="method-title">
+            Face Recognition
+          </div>
+
+          <div class="method-description">
+            Identify an enrolled student using the device camera.
+          </div>
+
+        </button>
+
+
+        <!-- QR / ID SCAN -->
+
+        <button
+          class="method-card"
+          type="button"
+          onclick="selectMethod('Student ID / QR Scan')"
+        >
+
+          <div class="method-icon">
+            📷
+          </div>
+
+          <div class="method-title">
+            Student ID / QR Scan
+          </div>
+
+          <div class="method-description">
+            Scan the student's ID or QR code.
+          </div>
+
+        </button>
+
+
+        <!-- MANUAL ID -->
+
+        <button
+          class="method-card"
+          type="button"
+          onclick="selectMethod('Manual Student ID')"
+        >
+
+          <div class="method-icon">
+            ⌨️
+          </div>
+
+          <div class="method-title">
+            Manual Student ID
+          </div>
+
+          <div class="method-description">
+            Enter the Student ID manually.
+          </div>
+
+        </button>
+
+      </div>
+
+
+      <div
+        id="statusBox"
+        class="status-box"
+      >
+        Status: Ready for student identification.
+      </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+      School WhatsApp Scanner V2.0<br>
+
+      Teacher Review and Send — No automatic WhatsApp sending
+
+    </footer>
+
+  </div>
+
+
+  <script>
+
+    function selectMethod(method) {
+
+      const statusBox =
+        document.getElementById("statusBox");
+
+      statusBox.textContent =
+        "Selected identification method: " + method;
+
+    }
+
+  </script>
+
+</body>
+</html>
